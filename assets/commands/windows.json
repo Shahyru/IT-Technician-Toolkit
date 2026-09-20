@@ -1,0 +1,253 @@
+[
+  {
+    "name": "ipconfig",
+    "category": "Networking",
+    "description": "Displays all current TCP/IP network configuration values and refreshes DHCP and DNS settings.",
+    "syntax": "ipconfig [/all | /renew [adapter] | /release [adapter] | /flushdns | /displaydns | /registerdns]",
+    "examples": [
+      "ipconfig",
+      "ipconfig /all",
+      "ipconfig /flushdns",
+      "ipconfig /renew"
+    ],
+    "warning": null,
+    "tags": ["network", "ip", "dns", "dhcp", "adapter", "windows"]
+  },
+  {
+    "name": "ping",
+    "category": "Networking",
+    "description": "Verifies IP-level connectivity to another computer by sending ICMP Echo Request messages.",
+    "syntax": "ping [-t] [-a] [-n count] [-l size] [-w timeout] target_name",
+    "examples": [
+      "ping 8.8.8.8",
+      "ping google.com",
+      "ping -t 192.168.1.1",
+      "ping -n 10 10.0.0.1"
+    ],
+    "warning": null,
+    "tags": ["network", "icmp", "connectivity", "latency", "windows"]
+  },
+  {
+    "name": "tracert",
+    "category": "Networking",
+    "description": "Determines the network path taken to a destination by sending ICMP Echo Request messages with varying TTL values.",
+    "syntax": "tracert [-d] [-h maximum_hops] [-w timeout] target_name",
+    "examples": [
+      "tracert 1.1.1.1",
+      "tracert -d google.com"
+    ],
+    "warning": null,
+    "tags": ["network", "routing", "hops", "trace", "latency", "windows"]
+  },
+  {
+    "name": "nslookup",
+    "category": "Networking",
+    "description": "Displays information that you can use to diagnose Domain Name System (DNS) infrastructure.",
+    "syntax": "nslookup [-type=querytype] <domain> [dns_server]",
+    "examples": [
+      "nslookup google.com",
+      "nslookup -type=mx google.com",
+      "nslookup example.com 8.8.8.8"
+    ],
+    "warning": null,
+    "tags": ["network", "dns", "resolver", "lookup", "mx", "windows"]
+  },
+  {
+    "name": "netstat",
+    "category": "Networking",
+    "description": "Displays active TCP connections, listening ports, Ethernet statistics, and routing tables.",
+    "syntax": "netstat [-a] [-b] [-e] [-n] [-o] [-p protocol] [-r] [-s] [interval]",
+    "examples": [
+      "netstat -ano",
+      "netstat -ano | findstr :80",
+      "netstat -r"
+    ],
+    "warning": null,
+    "tags": ["network", "ports", "connections", "listening", "pid", "windows"]
+  },
+  {
+    "name": "arp",
+    "category": "Networking",
+    "description": "Displays and modifies the IP-to-Physical (MAC) address translation tables used by ARP.",
+    "syntax": "arp [-a [inet_addr]] [-g] [-d inet_addr] [-s inet_addr eth_addr]",
+    "examples": [
+      "arp -a",
+      "arp -d *"
+    ],
+    "warning": "Flushing ARP table may temporarily disrupt current network communication until entries are re-learned.",
+    "tags": ["network", "arp", "mac", "cache", "windows"]
+  },
+  {
+    "name": "route",
+    "category": "Networking",
+    "description": "Manipulates network routing tables in Windows.",
+    "syntax": "route [-f] [-p] [print | add | delete | change] [destination] [MASK netmask] [gateway] [METRIC metric]",
+    "examples": [
+      "route print",
+      "route print -4",
+      "route add 10.0.0.0 mask 255.0.0.0 192.168.1.1"
+    ],
+    "warning": "Modifying routing tables can isolate the host from the network if misconfigured.",
+    "tags": ["network", "routing", "gateway", "table", "windows"]
+  },
+  {
+    "name": "sfc",
+    "category": "Troubleshooting",
+    "description": "System File Checker scans the integrity of all protected system files and replaces incorrect versions with correct Microsoft versions.",
+    "syntax": "sfc [/scannow] [/verifyonly] [/scanfile=file] [/verifyfile=file]",
+    "examples": [
+      "sfc /scannow"
+    ],
+    "warning": "Requires Administrator privileges. The scan may take several minutes to complete.",
+    "tags": ["system", "repair", "integrity", "corrupt", "windows"]
+  },
+  {
+    "name": "DISM",
+    "category": "Troubleshooting",
+    "description": "Deployment Image Servicing and Management repairs Windows Component Store images.",
+    "syntax": "DISM.exe /Online /Cleanup-Image [/CheckHealth | /ScanHealth | /RestoreHealth]",
+    "examples": [
+      "DISM /Online /Cleanup-Image /CheckHealth",
+      "DISM /Online /Cleanup-Image /ScanHealth",
+      "DISM /Online /Cleanup-Image /RestoreHealth"
+    ],
+    "warning": "Requires Administrator privileges and an active internet connection or local Windows ISO source.",
+    "tags": ["system", "repair", "dism", "image", "windows"]
+  },
+  {
+    "name": "chkdsk",
+    "category": "Disk",
+    "description": "Checks the file system and file system metadata of a volume for logical and physical errors.",
+    "syntax": "chkdsk [volume:] [/f] [/r] [/x]",
+    "examples": [
+      "chkdsk C: /f /r",
+      "chkdsk D: /f"
+    ],
+    "warning": "Scanning system drives with /f or /r requires a reboot and dismount. Scan may take hours on large drives.",
+    "tags": ["disk", "filesystem", "repair", "bad sectors", "windows"]
+  },
+  {
+    "name": "diskpart",
+    "category": "Disk",
+    "description": "Disk partition management command-line utility for managing drives, partitions, and volumes.",
+    "syntax": "diskpart",
+    "examples": [
+      "diskpart",
+      "list disk",
+      "select disk 0",
+      "list volume"
+    ],
+    "warning": "Commands in diskpart (clean, format, delete) can cause IRREVERSIBLE DATA LOSS if the wrong disk is selected.",
+    "tags": ["disk", "partition", "volume", "format", "windows"]
+  },
+  {
+    "name": "systeminfo",
+    "category": "System",
+    "description": "Displays detailed configuration information about a computer and its operating system, hardware, BIOS, and hotfixes.",
+    "syntax": "systeminfo [/s computer [/u domain\\user [/p password]]] [/fo {TABLE | LIST | CSV}]",
+    "examples": [
+      "systeminfo",
+      "systeminfo | findstr /B /C:\"OS Name\" /C:\"OS Version\""
+    ],
+    "warning": null,
+    "tags": ["system", "hardware", "bios", "hotfix", "specs", "windows"]
+  },
+  {
+    "name": "tasklist",
+    "category": "Processes",
+    "description": "Displays a list of currently running processes on the local or remote computer.",
+    "syntax": "tasklist [/s computer] [/u user] [/p password] [/fo {TABLE | LIST | CSV}] [/fi filter]",
+    "examples": [
+      "tasklist",
+      "tasklist /fi \"memusage gt 100000\"",
+      "tasklist /svc"
+    ],
+    "warning": null,
+    "tags": ["process", "task", "pid", "memory", "windows"]
+  },
+  {
+    "name": "taskkill",
+    "category": "Processes",
+    "description": "Terminates tasks by process id (PID) or image name.",
+    "syntax": "taskkill {[/pid processid | /im imagename]} [/f] [/t]",
+    "examples": [
+      "taskkill /im notepad.exe /f",
+      "taskkill /pid 1234 /f /t"
+    ],
+    "warning": "Force killing processes (/f) may cause unsaved data loss in target applications.",
+    "tags": ["process", "kill", "terminate", "task", "windows"]
+  },
+  {
+    "name": "driverquery",
+    "category": "System",
+    "description": "Enables an administrator to display a list of installed device drivers.",
+    "syntax": "driverquery [/v] [/fo {TABLE | LIST | CSV}]",
+    "examples": [
+      "driverquery",
+      "driverquery /v"
+    ],
+    "warning": null,
+    "tags": ["driver", "hardware", "kernel", "devices", "windows"]
+  },
+  {
+    "name": "hostname",
+    "category": "System",
+    "description": "Displays the host name portion of the full computer name of the computer.",
+    "syntax": "hostname",
+    "examples": [
+      "hostname"
+    ],
+    "warning": null,
+    "tags": ["system", "hostname", "name", "windows"]
+  },
+  {
+    "name": "whoami",
+    "category": "Users",
+    "description": "Displays user, group, and privilege information for the currently logged-on user.",
+    "syntax": "whoami [/upn | /fqdn | /user | /groups | /priv | /all]",
+    "examples": [
+      "whoami",
+      "whoami /all",
+      "whoami /priv"
+    ],
+    "warning": null,
+    "tags": ["user", "security", "privileges", "groups", "windows"]
+  },
+  {
+    "name": "gpupdate",
+    "category": "Troubleshooting",
+    "description": "Updates Group Policy settings on the local computer.",
+    "syntax": "gpupdate [/target:{computer | user}] [/force] [/wait:value] [/logoff] [/boot]",
+    "examples": [
+      "gpupdate /force"
+    ],
+    "warning": null,
+    "tags": ["gpo", "group policy", "active directory", "refresh", "windows"]
+  },
+  {
+    "name": "net user",
+    "category": "Users",
+    "description": "Adds or modifies user accounts, or displays user account information.",
+    "syntax": "net user [username [password | *] [options]] [/domain]",
+    "examples": [
+      "net user",
+      "net user Administrator",
+      "net user localadmin NewPass123! /add"
+    ],
+    "warning": "Modifying user accounts requires elevated permissions.",
+    "tags": ["user", "password", "accounts", "admin", "windows"]
+  },
+  {
+    "name": "dir",
+    "category": "Files",
+    "description": "Displays a list of a directory's files and subdirectories.",
+    "syntax": "dir [drive:][path][filename] [/p] [/q] [/w] [/d] [/a[[:]attributes]] [/o[[:]sortorder]] [/t[[:]timefield]] [/s] [/b] [/l] [/n]",
+    "examples": [
+      "dir",
+      "dir /s /b *.log",
+      "dir /ah"
+    ],
+    "warning": null,
+    "tags": ["file", "directory", "list", "windows"]
+  }
+]

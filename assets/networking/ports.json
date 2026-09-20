@@ -1,0 +1,282 @@
+[
+  {
+    "port": 20,
+    "protocol": "TCP",
+    "service": "FTP-DATA",
+    "description": "File Transfer Protocol (FTP) data transfer",
+    "category": "File Sharing"
+  },
+  {
+    "port": 21,
+    "protocol": "TCP",
+    "service": "FTP",
+    "description": "File Transfer Protocol (FTP) control/command connection",
+    "category": "File Sharing"
+  },
+  {
+    "port": 22,
+    "protocol": "TCP",
+    "service": "SSH / SFTP",
+    "description": "Secure Shell, secure logins, file transfers (SFTP) and port forwarding",
+    "category": "Remote Access"
+  },
+  {
+    "port": 23,
+    "protocol": "TCP",
+    "service": "Telnet",
+    "description": "Unencrypted text communications protocol (insecure)",
+    "category": "Remote Access"
+  },
+  {
+    "port": 25,
+    "protocol": "TCP",
+    "service": "SMTP",
+    "description": "Simple Mail Transfer Protocol for sending email between servers",
+    "category": "Email"
+  },
+  {
+    "port": 53,
+    "protocol": "TCP/UDP",
+    "service": "DNS",
+    "description": "Domain Name System resolving domain names to IP addresses",
+    "category": "DNS"
+  },
+  {
+    "port": 67,
+    "protocol": "UDP",
+    "service": "DHCP (Server)",
+    "description": "Dynamic Host Configuration Protocol server listening port",
+    "category": "Networking"
+  },
+  {
+    "port": 68,
+    "protocol": "UDP",
+    "service": "DHCP (Client)",
+    "description": "Dynamic Host Configuration Protocol client listening port",
+    "category": "Networking"
+  },
+  {
+    "port": 69,
+    "protocol": "UDP",
+    "service": "TFTP",
+    "description": "Trivial File Transfer Protocol used for PXE booting and router firmware",
+    "category": "File Sharing"
+  },
+  {
+    "port": 80,
+    "protocol": "TCP",
+    "service": "HTTP",
+    "description": "Hypertext Transfer Protocol for standard unencrypted web traffic",
+    "category": "Web"
+  },
+  {
+    "port": 88,
+    "protocol": "TCP/UDP",
+    "service": "Kerberos",
+    "description": "Authentication service in Windows Active Directory and Linux domains",
+    "category": "Security"
+  },
+  {
+    "port": 110,
+    "protocol": "TCP",
+    "service": "POP3",
+    "description": "Post Office Protocol version 3 for retrieving email (unencrypted)",
+    "category": "Email"
+  },
+  {
+    "port": 123,
+    "protocol": "UDP",
+    "service": "NTP",
+    "description": "Network Time Protocol for clock synchronization across systems",
+    "category": "Networking"
+  },
+  {
+    "port": 135,
+    "protocol": "TCP",
+    "service": "MS RPC / EPMAP",
+    "description": "Microsoft Remote Procedure Call Endpoint Mapper",
+    "category": "Directory Services"
+  },
+  {
+    "port": 137,
+    "protocol": "UDP",
+    "service": "NetBIOS Name",
+    "description": "NetBIOS Name Service for Windows local name resolution",
+    "category": "Networking"
+  },
+  {
+    "port": 138,
+    "protocol": "UDP",
+    "service": "NetBIOS Datagram",
+    "description": "NetBIOS Datagram Service for Windows network broadcasting",
+    "category": "Networking"
+  },
+  {
+    "port": 139,
+    "protocol": "TCP",
+    "service": "NetBIOS Session",
+    "description": "NetBIOS Session Service for older Windows file and printer sharing",
+    "category": "File Sharing"
+  },
+  {
+    "port": 143,
+    "protocol": "TCP",
+    "service": "IMAP",
+    "description": "Internet Message Access Protocol for email retrieval (unencrypted)",
+    "category": "Email"
+  },
+  {
+    "port": 161,
+    "protocol": "UDP",
+    "service": "SNMP",
+    "description": "Simple Network Management Protocol queries and monitoring",
+    "category": "Monitoring"
+  },
+  {
+    "port": 162,
+    "protocol": "UDP",
+    "service": "SNMP-Trap",
+    "description": "Simple Network Management Protocol asynchronous trap notifications",
+    "category": "Monitoring"
+  },
+  {
+    "port": 389,
+    "protocol": "TCP/UDP",
+    "service": "LDAP",
+    "description": "Lightweight Directory Access Protocol for querying directory services",
+    "category": "Directory Services"
+  },
+  {
+    "port": 443,
+    "protocol": "TCP",
+    "service": "HTTPS",
+    "description": "Hypertext Transfer Protocol Secure (TLS/SSL encrypted web)",
+    "category": "Web"
+  },
+  {
+    "port": 445,
+    "protocol": "TCP",
+    "service": "SMB",
+    "description": "Server Message Block for native Windows network file and printer sharing",
+    "category": "File Sharing"
+  },
+  {
+    "port": 465,
+    "protocol": "TCP",
+    "service": "SMTPS",
+    "description": "SMTP over SSL/TLS for secure authenticated email transmission",
+    "category": "Email"
+  },
+  {
+    "port": 500,
+    "protocol": "UDP",
+    "service": "ISAKMP / IKE",
+    "description": "Internet Security Association and Key Management Protocol for IPsec VPN",
+    "category": "Security"
+  },
+  {
+    "port": 514,
+    "protocol": "UDP",
+    "service": "Syslog",
+    "description": "Standard system logging protocol for centralized syslog collectors",
+    "category": "Monitoring"
+  },
+  {
+    "port": 587,
+    "protocol": "TCP",
+    "service": "SMTP Submission",
+    "description": "Mail submission port with mandatory STARTTLS encryption",
+    "category": "Email"
+  },
+  {
+    "port": 636,
+    "protocol": "TCP",
+    "service": "LDAPS",
+    "description": "Lightweight Directory Access Protocol over SSL/TLS",
+    "category": "Directory Services"
+  },
+  {
+    "port": 993,
+    "protocol": "TCP",
+    "service": "IMAPS",
+    "description": "Internet Message Access Protocol over SSL/TLS for secure email sync",
+    "category": "Email"
+  },
+  {
+    "port": 995,
+    "protocol": "TCP",
+    "service": "POP3S",
+    "description": "Post Office Protocol 3 over SSL/TLS for secure email retrieval",
+    "category": "Email"
+  },
+  {
+    "port": 1433,
+    "protocol": "TCP",
+    "service": "MS SQL",
+    "description": "Microsoft SQL Server database engine default instance",
+    "category": "Database"
+  },
+  {
+    "port": 1521,
+    "protocol": "TCP",
+    "service": "Oracle DB",
+    "description": "Oracle Database listener connection endpoint",
+    "category": "Database"
+  },
+  {
+    "port": 3306,
+    "protocol": "TCP",
+    "service": "MySQL / MariaDB",
+    "description": "MySQL and MariaDB relational database server default port",
+    "category": "Database"
+  },
+  {
+    "port": 3389,
+    "protocol": "TCP/UDP",
+    "service": "RDP",
+    "description": "Remote Desktop Protocol for Windows desktop and server administration",
+    "category": "Remote Access"
+  },
+  {
+    "port": 5432,
+    "protocol": "TCP",
+    "service": "PostgreSQL",
+    "description": "PostgreSQL object-relational database system listener",
+    "category": "Database"
+  },
+  {
+    "port": 5900,
+    "protocol": "TCP",
+    "service": "VNC",
+    "description": "Virtual Network Computing remote desktop sharing protocol",
+    "category": "Remote Access"
+  },
+  {
+    "port": 6379,
+    "protocol": "TCP",
+    "service": "Redis",
+    "description": "Redis in-memory key-value data structure store and cache",
+    "category": "Database"
+  },
+  {
+    "port": 8080,
+    "protocol": "TCP",
+    "service": "HTTP Alternate",
+    "description": "Common alternate port for HTTP web development, proxy, or Tomcat",
+    "category": "Web"
+  },
+  {
+    "port": 8443,
+    "protocol": "TCP",
+    "service": "HTTPS Alternate",
+    "description": "Common alternate port for secure HTTPS administrative consoles",
+    "category": "Web"
+  },
+  {
+    "port": 27017,
+    "protocol": "TCP",
+    "service": "MongoDB",
+    "description": "MongoDB NoSQL document database server default port",
+    "category": "Database"
+  }
+]

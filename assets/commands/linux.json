@@ -1,0 +1,232 @@
+[
+  {
+    "name": "ip",
+    "category": "Networking",
+    "description": "Show / manipulate routing, network devices, interfaces and tunnels in modern Linux systems.",
+    "syntax": "ip [OPTIONS] OBJECT {COMMAND | help}",
+    "examples": [
+      "ip addr show",
+      "ip -br a",
+      "ip route show",
+      "ip link set eth0 up"
+    ],
+    "warning": null,
+    "tags": ["network", "ip", "interface", "route", "linux"]
+  },
+  {
+    "name": "ss",
+    "category": "Networking",
+    "description": "Socket statistics utility used to dump socket statistics and examine network ports.",
+    "syntax": "ss [options] [filter]",
+    "examples": [
+      "ss -tulpn",
+      "ss -s",
+      "ss -t -a"
+    ],
+    "warning": null,
+    "tags": ["network", "sockets", "ports", "listening", "linux"]
+  },
+  {
+    "name": "ping",
+    "category": "Networking",
+    "description": "Send ICMP ECHO_REQUEST to network hosts to check connectivity and round-trip times.",
+    "syntax": "ping [options] destination",
+    "examples": [
+      "ping -c 4 8.8.8.8",
+      "ping -i 0.5 google.com"
+    ],
+    "warning": null,
+    "tags": ["network", "icmp", "connectivity", "latency", "linux"]
+  },
+  {
+    "name": "curl",
+    "category": "Networking",
+    "description": "Command line tool to transfer data to or from a server supporting numerous protocols.",
+    "syntax": "curl [options] [URL...]",
+    "examples": [
+      "curl -I https://example.com",
+      "curl -O https://example.com/file.tar.gz",
+      "curl -v telnet://192.168.1.1:22"
+    ],
+    "warning": null,
+    "tags": ["network", "http", "api", "download", "linux"]
+  },
+  {
+    "name": "dig",
+    "category": "Networking",
+    "description": "DNS lookup utility for querying Domain Name System name servers.",
+    "syntax": "dig [@server] [-p port] [name] [type]",
+    "examples": [
+      "dig example.com",
+      "dig @8.8.8.8 example.com +short",
+      "dig example.com MX"
+    ],
+    "warning": null,
+    "tags": ["network", "dns", "lookup", "nameserver", "linux"]
+  },
+  {
+    "name": "systemctl",
+    "category": "Services",
+    "description": "Control the systemd system and service manager to start, stop, enable, and monitor daemons.",
+    "syntax": "systemctl [command] [unit]",
+    "examples": [
+      "systemctl status nginx",
+      "systemctl restart sshd",
+      "systemctl enable --now docker",
+      "systemctl failed"
+    ],
+    "warning": "Restarting or stopping critical services (such as sshd or network) on remote servers may cause session drop.",
+    "tags": ["services", "systemd", "daemon", "status", "linux"]
+  },
+  {
+    "name": "journalctl",
+    "category": "Services",
+    "description": "Query and inspect the systemd journal logs.",
+    "syntax": "journalctl [options] [matches]",
+    "examples": [
+      "journalctl -xeu nginx",
+      "journalctl -f",
+      "journalctl -b -p err"
+    ],
+    "warning": null,
+    "tags": ["logs", "systemd", "troubleshooting", "errors", "linux"]
+  },
+  {
+    "name": "top",
+    "category": "Processes",
+    "description": "Provides dynamic real-time view of a running system including CPU, memory, and process lists.",
+    "syntax": "top [options]",
+    "examples": [
+      "top",
+      "top -u www-data",
+      "top -p 1234"
+    ],
+    "warning": null,
+    "tags": ["process", "cpu", "memory", "load", "linux"]
+  },
+  {
+    "name": "ps",
+    "category": "Processes",
+    "description": "Report a snapshot of the current processes.",
+    "syntax": "ps [options]",
+    "examples": [
+      "ps aux",
+      "ps aux | grep nginx",
+      "ps -ef --forest"
+    ],
+    "warning": null,
+    "tags": ["process", "snapshot", "pid", "linux"]
+  },
+  {
+    "name": "kill",
+    "category": "Processes",
+    "description": "Send a signal to a process by process ID (PID).",
+    "syntax": "kill [-signal] pid...",
+    "examples": [
+      "kill 1234",
+      "kill -9 1234",
+      "kill -HUP 1234"
+    ],
+    "warning": "SIGKILL (-9) forces immediate termination without allowing processes to save state or flush buffers.",
+    "tags": ["process", "kill", "signal", "terminate", "linux"]
+  },
+  {
+    "name": "df",
+    "category": "Disk",
+    "description": "Report file system disk space usage.",
+    "syntax": "df [OPTION]... [FILE]...",
+    "examples": [
+      "df -h",
+      "df -hT",
+      "df -i"
+    ],
+    "warning": null,
+    "tags": ["disk", "storage", "mount", "capacity", "linux"]
+  },
+  {
+    "name": "du",
+    "category": "Disk",
+    "description": "Estimate file space usage for directories and files.",
+    "syntax": "du [OPTION]... [FILE]...",
+    "examples": [
+      "du -sh /var/log",
+      "du -ah --max-depth=1 / | sort -hr | head -n 10"
+    ],
+    "warning": null,
+    "tags": ["disk", "directory", "size", "usage", "linux"]
+  },
+  {
+    "name": "lsblk",
+    "category": "Disk",
+    "description": "List information about all available block devices in a tree structure.",
+    "syntax": "lsblk [options] [device...]",
+    "examples": [
+      "lsblk",
+      "lsblk -f"
+    ],
+    "warning": null,
+    "tags": ["disk", "block", "partitions", "storage", "linux"]
+  },
+  {
+    "name": "chmod",
+    "category": "Permissions",
+    "description": "Change file mode bits (read, write, execute permissions).",
+    "syntax": "chmod [OPTION]... MODE[,MODE]... FILE...",
+    "examples": [
+      "chmod +x script.sh",
+      "chmod 600 ~/.ssh/id_rsa",
+      "chmod 755 /var/www/html"
+    ],
+    "warning": "Applying chmod recursively (-R) to root or system directories can destroy operating system security and break boot.",
+    "tags": ["permissions", "security", "read", "write", "execute", "linux"]
+  },
+  {
+    "name": "chown",
+    "category": "Permissions",
+    "description": "Change file owner and group ownership.",
+    "syntax": "chown [OPTION]... [OWNER][:[GROUP]] FILE...",
+    "examples": [
+      "chown www-data:www-data /var/www/html",
+      "chown -R user:user /home/user/project"
+    ],
+    "warning": "Be cautious with recursive (-R) ownership changes on shared or system mounts.",
+    "tags": ["permissions", "owner", "group", "security", "linux"]
+  },
+  {
+    "name": "rm",
+    "category": "Files",
+    "description": "Remove files or directories.",
+    "syntax": "rm [OPTION]... [FILE]...",
+    "examples": [
+      "rm file.txt",
+      "rm -rf /tmp/test-folder"
+    ],
+    "warning": "DANGER: 'rm -rf' deletes files permanently without confirmation or trash bin. Misplaced spaces can wipe entire disks.",
+    "tags": ["files", "delete", "remove", "destructive", "linux"]
+  },
+  {
+    "name": "apt",
+    "category": "Packages",
+    "description": "Command-line package manager for Debian and Ubuntu Linux distributions.",
+    "syntax": "apt [options] command",
+    "examples": [
+      "sudo apt update && sudo apt upgrade -y",
+      "sudo apt install -y htop",
+      "apt search nginx"
+    ],
+    "warning": null,
+    "tags": ["package", "debian", "ubuntu", "install", "update", "linux"]
+  },
+  {
+    "name": "tar",
+    "category": "Archives",
+    "description": "Archive utility to create, maintain, modify, or extract archives.",
+    "syntax": "tar [OPTION...] [FILE]...",
+    "examples": [
+      "tar -czvf archive.tar.gz /path/to/dir",
+      "tar -xzvf archive.tar.gz"
+    ],
+    "warning": null,
+    "tags": ["archive", "compression", "tar", "backup", "linux"]
+  }
+]

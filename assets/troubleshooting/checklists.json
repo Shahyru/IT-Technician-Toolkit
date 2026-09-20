@@ -1,0 +1,514 @@
+[
+  {
+    "id": "pc-wont-turn-on",
+    "title": "PC Won't Turn On",
+    "category": "Hardware",
+    "description": "Systematic diagnostic steps when a desktop or laptop shows no signs of power, fan spin, or LED activity.",
+    "steps": [
+      {
+        "id": "pwr-1",
+        "title": "Check wall outlet & surge protector",
+        "description": "Plug a lamp or phone charger into the wall outlet or surge strip to confirm power delivery.",
+        "warning": null
+      },
+      {
+        "id": "pwr-2",
+        "title": "Verify power cable & PSU switch",
+        "description": "Ensure the power cord is firmly seated into the back of the PSU and the PSU toggle switch is set to '|' (ON).",
+        "warning": null
+      },
+      {
+        "id": "pwr-3",
+        "title": "Disconnect external USB devices",
+        "description": "Unplug all external USB hubs, printers, external hard drives, and flash drives to eliminate shorts.",
+        "warning": null
+      },
+      {
+        "id": "pwr-4",
+        "title": "Perform hard power reset (drain capacitors)",
+        "description": "Unplug power cable, hold down PC power button for 30 seconds to drain motherboard capacitors, reconnect power and try booting.",
+        "warning": null
+      },
+      {
+        "id": "pwr-5",
+        "title": "Inspect motherboard power connectors",
+        "description": "Ensure 24-pin ATX and 4/8-pin EPS CPU power cables are completely clipped in.",
+        "warning": "Ensure PC is unplugged before touching internal components."
+      },
+      {
+        "id": "pwr-6",
+        "title": "Test front panel power switch / jump pins",
+        "description": "Bypass the chassis power button by gently bridging the two motherboard PWR_SW header pins with a flathead screwdriver.",
+        "warning": "Be careful not to bridge incorrect motherboard pins."
+      },
+      {
+        "id": "pwr-7",
+        "title": "Test Power Supply (Paperclip test)",
+        "description": "Disconnect PSU cables from motherboard and GPU. Jump green PS_ON pin to any black GND pin with a paperclip to test fan spin.",
+        "warning": "Only perform if experienced with ATX pinouts."
+      }
+    ]
+  },
+  {
+    "id": "no-display",
+    "title": "No Display (Black Screen)",
+    "category": "Hardware",
+    "description": "PC powers on (fans spin, LEDs light up) but monitor shows 'No Signal' or stays completely black.",
+    "steps": [
+      {
+        "id": "disp-1",
+        "title": "Verify monitor power & input source",
+        "description": "Ensure monitor power light is on and manually select correct input channel (HDMI 1, DisplayPort, etc.).",
+        "warning": null
+      },
+      {
+        "id": "disp-2",
+        "title": "Check GPU vs Motherboard display output",
+        "description": "If the computer has a dedicated graphics card, the display cable MUST be plugged into the GPU, NOT the motherboard.",
+        "warning": null
+      },
+      {
+        "id": "disp-3",
+        "title": "Swap display cable & port",
+        "description": "Try an alternative HDMI or DisplayPort cable and try connecting to a different port on the GPU.",
+        "warning": null
+      },
+      {
+        "id": "disp-4",
+        "title": "Check Motherboard Diagnostic LEDs / Beep Codes",
+        "description": "Observe debug LEDs (CPU, DRAM, VGA, BOOT) on motherboard or listen for POST speaker beeps.",
+        "warning": null
+      },
+      {
+        "id": "disp-5",
+        "title": "Reseat RAM modules",
+        "description": "Remove RAM sticks, blow out dust from slots, and firmly reseat. Try booting with only one stick in the primary recommended slot.",
+        "warning": "Always unplug AC power before removing RAM."
+      },
+      {
+        "id": "disp-6",
+        "title": "Reseat Dedicated GPU & PCIe power cables",
+        "description": "Remove and reseat the graphics card in the top PCIe x16 slot. Ensure PCIe power connectors are securely latched.",
+        "warning": null
+      },
+      {
+        "id": "disp-7",
+        "title": "Clear CMOS / Reset BIOS",
+        "description": "Unplug power, remove the CR2032 coin-cell battery for 5 minutes (or bridge CLR_CMOS jumper) to restore default BIOS settings.",
+        "warning": null
+      }
+    ]
+  },
+  {
+    "id": "slow-computer",
+    "title": "Slow Computer & High Resource Usage",
+    "category": "Performance",
+    "description": "System sluggishness, freezing, 100% disk/CPU utilization, and delayed responsiveness.",
+    "steps": [
+      {
+        "id": "slow-1",
+        "title": "Check Task Manager for bottleneck processes",
+        "description": "Open Task Manager (Ctrl+Shift+Esc), sort by CPU, Memory, and Disk to identify runaway applications.",
+        "warning": null
+      },
+      {
+        "id": "slow-2",
+        "title": "Inspect Startup Applications",
+        "description": "Disable unnecessary high-impact startup apps in Task Manager > Startup tab.",
+        "warning": null
+      },
+      {
+        "id": "slow-3",
+        "title": "Check Storage Space & Drive Health",
+        "description": "Ensure C: drive has at least 15-20% free space for virtual memory paging and temporary files.",
+        "warning": null
+      },
+      {
+        "id": "slow-4",
+        "title": "Check CPU Temperatures & Thermal Throttling",
+        "description": "Monitor hardware temps. Clean dust filters, fans, and check if thermal paste needs replacement.",
+        "warning": null
+      },
+      {
+        "id": "slow-5",
+        "title": "Run System Integrity Checks (SFC & DISM)",
+        "description": "Run 'sfc /scannow' and 'DISM /Online /Cleanup-Image /RestoreHealth' in Administrator command prompt.",
+        "warning": null
+      },
+      {
+        "id": "slow-6",
+        "title": "Scan for Malware and Crypto-miners",
+        "description": "Run an offline Windows Defender scan or secondary scanner to detect hidden background miner scripts.",
+        "warning": null
+      }
+    ]
+  },
+  {
+    "id": "internet-not-working",
+    "title": "Internet Not Working",
+    "category": "Networking",
+    "description": "Wired or wireless connection shows 'No Internet Access' or cannot reach websites.",
+    "steps": [
+      {
+        "id": "net-1",
+        "title": "Verify physical connection / Wi-Fi status",
+        "description": "Check if ethernet cable has link lights on NIC and switch, or if Wi-Fi is connected with valid signal.",
+        "warning": null
+      },
+      {
+        "id": "net-2",
+        "title": "Check IP Address (APIPA 169.254.x.x check)",
+        "description": "Run 'ipconfig'. If IP begins with 169.254.x.x, the device failed to obtain an address from DHCP.",
+        "warning": null
+      },
+      {
+        "id": "net-3",
+        "title": "Ping Default Gateway",
+        "description": "Ping router IP (e.g., ping 192.168.1.1). If this fails, local network/cabling is the issue.",
+        "warning": null
+      },
+      {
+        "id": "net-4",
+        "title": "Ping Public IP (8.8.8.8)",
+        "description": "Ping 8.8.8.8 or 1.1.1.1. If this succeeds but websites fail, the issue is DNS.",
+        "warning": null
+      },
+      {
+        "id": "net-5",
+        "title": "Flush DNS Cache & Reset Winsock",
+        "description": "Run 'ipconfig /flushdns', 'netsh winsock reset', and 'netsh int ip reset' as Administrator.",
+        "warning": "Requires system reboot after winsock reset."
+      },
+      {
+        "id": "net-6",
+        "title": "Power cycle Modem and Router",
+        "description": "Unplug ISP modem and Wi-Fi router for 60 seconds, reconnect modem first, then router.",
+        "warning": null
+      }
+    ]
+  },
+  {
+    "id": "wifi-problems",
+    "title": "Wi-Fi Problems & Drops",
+    "category": "Networking",
+    "description": "Frequent wireless disconnections, weak reception, or inability to authenticate.",
+    "steps": [
+      {
+        "id": "wifi-1",
+        "title": "Forget and reconnect to network",
+        "description": "Delete saved Wi-Fi profile and re-enter WPA/WPA2/WPA3 passphrase.",
+        "warning": null
+      },
+      {
+        "id": "wifi-2",
+        "title": "Toggle Airplane mode / Wi-Fi adapter",
+        "description": "Disable and re-enable Wi-Fi adapter in Network Connections (ncpa.cpl).",
+        "warning": null
+      },
+      {
+        "id": "wifi-3",
+        "title": "Switch between 2.4 GHz and 5 GHz bands",
+        "description": "Connect to 5 GHz for higher speed/less interference, or 2.4 GHz for greater range through walls.",
+        "warning": null
+      },
+      {
+        "id": "wifi-4",
+        "title": "Disable Wi-Fi Power Saving",
+        "description": "In Device Manager > Wi-Fi adapter properties > Power Management, uncheck 'Allow computer to turn off this device to save power'.",
+        "warning": null
+      },
+      {
+        "id": "wifi-5",
+        "title": "Update or rollback wireless NIC drivers",
+        "description": "Install latest OEM drivers directly from manufacturer (Intel, Realtek, Qualcomm).",
+        "warning": null
+      }
+    ]
+  },
+  {
+    "id": "printer-problems",
+    "title": "Printer Problems & Stuck Queue",
+    "category": "Peripherals",
+    "description": "Printer offline, jobs stuck in spooler queue, or documents not printing.",
+    "steps": [
+      {
+        "id": "print-1",
+        "title": "Check printer physical state & error lights",
+        "description": "Ensure paper is loaded, toner/ink is installed, trays are closed, and no paper jams exist.",
+        "warning": null
+      },
+      {
+        "id": "print-2",
+        "title": "Verify IP address & Ping printer",
+        "description": "Print configuration page from printer LCD to verify IP. Ping printer IP from PC.",
+        "warning": null
+      },
+      {
+        "id": "print-3",
+        "title": "Restart Print Spooler service",
+        "description": "Stop 'spooler' service, delete all files inside 'C:\\Windows\\System32\\spool\\PRINTERS', and start spooler service.",
+        "warning": null
+      },
+      {
+        "id": "print-4",
+        "title": "Uncheck 'Use Printer Offline'",
+        "description": "Open Printer queue > Printer menu > Ensure 'Use Printer Offline' and 'Pause Printing' are unchecked.",
+        "warning": null
+      },
+      {
+        "id": "print-5",
+        "title": "Reinstall printer driver (Standard TCP/IP port)",
+        "description": "Remove device from Control Panel, add via TCP/IP address with manufacturer PCL6 or PostScript driver.",
+        "warning": null
+      }
+    ]
+  },
+  {
+    "id": "windows-problems",
+    "title": "Windows Update & System Problems",
+    "category": "Operating System",
+    "description": "Windows update failure codes, loop reboots, or corrupt system components.",
+    "steps": [
+      {
+        "id": "win-1",
+        "title": "Run Windows Update Troubleshooter",
+        "description": "Settings > System > Troubleshoot > Other troubleshooters > Windows Update > Run.",
+        "warning": null
+      },
+      {
+        "id": "win-2",
+        "title": "Reset SoftwareDistribution folder",
+        "description": "Stop 'wuauserv' and 'bits', rename 'C:\\Windows\\SoftwareDistribution' to '.old', and restart services.",
+        "warning": null
+      },
+      {
+        "id": "win-3",
+        "title": "Execute DISM & SFC health restore",
+        "description": "Run 'DISM.exe /Online /Cleanup-Image /RestoreHealth' followed by 'sfc /scannow'.",
+        "warning": null
+      },
+      {
+        "id": "win-4",
+        "title": "Reboot into Safe Mode with Networking",
+        "description": "Hold Shift while clicking Restart > Troubleshoot > Advanced Options > Startup Settings > Safe Mode.",
+        "warning": null
+      }
+    ]
+  },
+  {
+    "id": "blue-screen",
+    "title": "Blue Screen of Death (BSOD)",
+    "category": "Operating System",
+    "description": "System crashes with stop codes (CRITICAL_PROCESS_DIED, KERNEL_SECURITY_CHECK_FAILURE, etc.).",
+    "steps": [
+      {
+        "id": "bsod-1",
+        "title": "Record Stop Code and BugCheck Module",
+        "description": "Note the exact stop code string and failing driver (.sys file) displayed on the screen.",
+        "warning": null
+      },
+      {
+        "id": "bsod-2",
+        "title": "Analyze Minidump with BlueScreenView / WinDbg",
+        "description": "Inspect dump files located in 'C:\\Windows\\Minidump' to identify the specific third-party driver causing the crash.",
+        "warning": null
+      },
+      {
+        "id": "bsod-3",
+        "title": "Roll back recent driver / Windows updates",
+        "description": "If crash started after a recent GPU or device driver update, roll back in Device Manager.",
+        "warning": null
+      },
+      {
+        "id": "bsod-4",
+        "title": "Run Windows Memory Diagnostic / MemTest86",
+        "description": "Test RAM for bit flips or faulty sectors using 'mdsched.exe' or bootable MemTest86.",
+        "warning": null
+      },
+      {
+        "id": "bsod-5",
+        "title": "Check SMART disk health",
+        "description": "Run CrystalDiskInfo or 'wmic diskdrive get status' to detect impending drive failure.",
+        "warning": null
+      }
+    ]
+  },
+  {
+    "id": "app-wont-start",
+    "title": "Application Won't Start",
+    "category": "Software",
+    "description": "Application crashes immediately upon launch, throws DLL errors, or hangs silently.",
+    "steps": [
+      {
+        "id": "app-1",
+        "title": "End zombie instances in Task Manager",
+        "description": "Check Details tab for frozen existing processes of the executable and End Task.",
+        "warning": null
+      },
+      {
+        "id": "app-2",
+        "title": "Run as Administrator / Compatibility Mode",
+        "description": "Right click executable > Run as administrator. Test compatibility settings if older software.",
+        "warning": null
+      },
+      {
+        "id": "app-3",
+        "title": "Install Visual C++ Redistributable packages",
+        "description": "Install VC++ 2015-2022 x86 and x64 runtimes to resolve missing MSVCP140.dll / VCRUNTIME140.dll errors.",
+        "warning": null
+      },
+      {
+        "id": "app-4",
+        "title": "Check Windows Event Viewer",
+        "description": "Open 'eventvwr.msc' > Windows Logs > Application > look for Error events with event source 'Application Error'.",
+        "warning": null
+      },
+      {
+        "id": "app-5",
+        "title": "Verify Antivirus / Windows Defender Exclusion",
+        "description": "Check antivirus protection history to see if the executable or a dependency was quarantined.",
+        "warning": null
+      }
+    ]
+  },
+  {
+    "id": "disk-problems",
+    "title": "Disk & Storage Problems",
+    "category": "Storage",
+    "description": "Disk read errors, slow file transfers, clicking noises, or missing partitions.",
+    "steps": [
+      {
+        "id": "disk-1",
+        "title": "Check SMART Attributes",
+        "description": "Inspect Reallocated Sectors Count, Current Pending Sector Count, and Uncorrectable Sector Count.",
+        "warning": "If reallocated sectors are steadily climbing, back up all critical data immediately."
+      },
+      {
+        "id": "disk-2",
+        "title": "Run Check Disk (chkdsk)",
+        "description": "Run 'chkdsk /f C:' to repair logical file system index errors.",
+        "warning": null
+      },
+      {
+        "id": "disk-3",
+        "title": "Check SATA / NVMe cable & seating",
+        "description": "Ensure SATA data and power cables are firmly plugged in. For M.2 drives, reseat the drive in the slot.",
+        "warning": null
+      },
+      {
+        "id": "disk-4",
+        "title": "Inspect Disk Management (diskmgmt.msc)",
+        "description": "Check if drive appears as Unallocated, RAW, or Offline.",
+        "warning": null
+      }
+    ]
+  },
+  {
+    "id": "audio-problems",
+    "title": "Audio & Sound Problems",
+    "category": "Hardware",
+    "description": "No sound output, crackling audio, microphone not detected, or wrong playback device.",
+    "steps": [
+      {
+        "id": "aud-1",
+        "title": "Verify Default Playback Device",
+        "description": "Right click speaker icon > Sound settings > Choose where to play sound (Headphones vs Speakers vs HDMI).",
+        "warning": null
+      },
+      {
+        "id": "aud-2",
+        "title": "Check physical audio jacks & volume toggles",
+        "description": "Ensure 3.5mm plug is in light green audio-out jack and inline headset volume wheel is turned up.",
+        "warning": null
+      },
+      {
+        "id": "aud-3",
+        "title": "Restart Windows Audio Service",
+        "description": "Restart 'Audiosrv' and 'AudioEndpointBuilder' services in services.msc.",
+        "warning": null
+      },
+      {
+        "id": "aud-4",
+        "title": "Disable Audio Enhancements",
+        "description": "In sound device properties > Advanced tab > uncheck 'Enable audio enhancements'.",
+        "warning": null
+      },
+      {
+        "id": "aud-5",
+        "title": "Reinstall Realtek / OEM High Definition Audio driver",
+        "description": "Uninstall audio device from Device Manager and scan for hardware changes.",
+        "warning": null
+      }
+    ]
+  },
+  {
+    "id": "usb-problems",
+    "title": "USB Device Not Recognized",
+    "category": "Peripherals",
+    "description": "USB drive or peripheral fails to mount, disconnects intermittently, or shows code 43 in Device Manager.",
+    "steps": [
+      {
+        "id": "usb-1",
+        "title": "Test directly on Rear Motherboard Ports",
+        "description": "Bypass front chassis ports and USB hubs by connecting directly to rear I/O motherboard ports.",
+        "warning": null
+      },
+      {
+        "id": "usb-2",
+        "title": "Check Device Manager for yellow exclamation marks",
+        "description": "Look for Unknown Device or Code 43 under Universal Serial Bus controllers.",
+        "warning": null
+      },
+      {
+        "id": "usb-3",
+        "title": "Disable USB Selective Suspend",
+        "description": "Power Options > Change plan settings > Advanced power settings > USB settings > USB selective suspend setting > Disabled.",
+        "warning": null
+      },
+      {
+        "id": "usb-4",
+        "title": "Uninstall USB Root Hubs and reboot",
+        "description": "In Device Manager, uninstall USB Root Hub (USB 3.0) and restart PC to force Windows driver reload.",
+        "warning": null
+      }
+    ]
+  },
+  {
+    "id": "network-problems",
+    "title": "Local Network & File Sharing Problems",
+    "category": "Networking",
+    "description": "Cannot view or access shared network folders (SMB), printers, or local NAS devices.",
+    "steps": [
+      {
+        "id": "netp-1",
+        "title": "Verify Network Profile is set to Private",
+        "description": "In Windows Settings > Network & Internet > Ethernet/Wi-Fi > Network profile type must be set to 'Private', not 'Public'.",
+        "warning": null
+      },
+      {
+        "id": "netp-2",
+        "title": "Enable Network Discovery & File Sharing",
+        "description": "Control Panel > Network and Sharing Center > Advanced sharing settings > Turn on network discovery and file/printer sharing.",
+        "warning": null
+      },
+      {
+        "id": "netp-3",
+        "title": "Test SMB connectivity with IP Address",
+        "description": "Press Win+R and type '\\\\<Target_IP_Address>\\ShareName' instead of computer name to bypass NetBIOS name issues.",
+        "warning": null
+      },
+      {
+        "id": "netp-4",
+        "title": "Verify SMB 1.0 or SMB 2/3 requirements",
+        "description": "If connecting to legacy NAS devices, verify if SMBv1 client feature is required or upgrade NAS firmware.",
+        "warning": "SMB 1.0 has known security vulnerabilities. Only enable on trusted isolated networks if strictly necessary."
+      },
+      {
+        "id": "netp-5",
+        "title": "Check Windows Credential Manager",
+        "description": "Add Windows Credentials in Control Panel for target host with username format 'TARGET_PC\\username'.",
+        "warning": null
+      }
+    ]
+  }
+]

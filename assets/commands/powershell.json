@@ -1,0 +1,149 @@
+[
+  {
+    "name": "Test-NetConnection",
+    "category": "Networking",
+    "description": "Displays diagnostic information for a connection including ping, traceroute, and specific TCP port reachability.",
+    "syntax": "Test-NetConnection [[-ComputerName] <String>] [-Port <Int32>] [-InformationLevel <String>] [-CommonTCPPort <String>]",
+    "examples": [
+      "Test-NetConnection -ComputerName 8.8.8.8",
+      "Test-NetConnection -ComputerName example.com -Port 443",
+      "Test-NetConnection -ComputerName server01 -Port 3389 -InformationLevel Detailed"
+    ],
+    "warning": null,
+    "tags": ["network", "ping", "port", "tcp", "test", "powershell"]
+  },
+  {
+    "name": "Get-NetIPConfiguration",
+    "category": "Networking",
+    "description": "Gets network IP address configuration information (PowerShell equivalent of ipconfig).",
+    "syntax": "Get-NetIPConfiguration [[-InterfaceAlias] <String[]>] [-Detailed]",
+    "examples": [
+      "Get-NetIPConfiguration",
+      "Get-NetIPConfiguration -Detailed"
+    ],
+    "warning": null,
+    "tags": ["network", "ip", "dns", "gateway", "adapter", "powershell"]
+  },
+  {
+    "name": "Get-NetAdapter",
+    "category": "Networking",
+    "description": "Gets basic network adapter properties such as status, link speed, and MAC address.",
+    "syntax": "Get-NetAdapter [[-Name] <String[]>] [-IncludeHidden]",
+    "examples": [
+      "Get-NetAdapter",
+      "Get-NetAdapter | Where-Object {$_.Status -eq 'Up'}"
+    ],
+    "warning": null,
+    "tags": ["network", "nic", "mac", "speed", "adapter", "powershell"]
+  },
+  {
+    "name": "Get-DnsClientServerAddress",
+    "category": "Networking",
+    "description": "Gets DNS server IP addresses associated with network interfaces.",
+    "syntax": "Get-DnsClientServerAddress [[-InterfaceAlias] <String[]>] [-AddressFamily <AddressFamily[]>]",
+    "examples": [
+      "Get-DnsClientServerAddress",
+      "Get-DnsClientServerAddress -AddressFamily IPv4"
+    ],
+    "warning": null,
+    "tags": ["network", "dns", "nameserver", "ip", "powershell"]
+  },
+  {
+    "name": "Get-ComputerInfo",
+    "category": "System",
+    "description": "Gets a consolidated object of system and operating system properties.",
+    "syntax": "Get-ComputerInfo [[-Property] <String[]>]",
+    "examples": [
+      "Get-ComputerInfo",
+      "Get-ComputerInfo -Property OsName, OsVersion, WindowsVersion, TotalPhysicalMemory"
+    ],
+    "warning": null,
+    "tags": ["system", "specs", "os", "hardware", "bios", "powershell"]
+  },
+  {
+    "name": "Get-Service",
+    "category": "Services",
+    "description": "Gets the services on a local or remote computer.",
+    "syntax": "Get-Service [[-Name] <String[]>] [-DependentServices] [-RequiredServices]",
+    "examples": [
+      "Get-Service",
+      "Get-Service | Where-Object {$_.Status -eq 'Running'}",
+      "Get-Service -Name spooler"
+    ],
+    "warning": null,
+    "tags": ["services", "windows", "daemons", "status", "powershell"]
+  },
+  {
+    "name": "Restart-Service",
+    "category": "Services",
+    "description": "Stops and then starts one or more services.",
+    "syntax": "Restart-Service [-Name] <String[]> [-Force]",
+    "examples": [
+      "Restart-Service -Name spooler -Force",
+      "Restart-Service -Name wuauserv"
+    ],
+    "warning": "Restarting critical services can temporarily interrupt dependent user applications.",
+    "tags": ["services", "restart", "spooler", "powershell"]
+  },
+  {
+    "name": "Get-Process",
+    "category": "Processes",
+    "description": "Gets the processes that are running on the local computer.",
+    "syntax": "Get-Process [[-Name] <String[]>] [-FileVersionInfo] [-Module]",
+    "examples": [
+      "Get-Process",
+      "Get-Process | Sort-Object CPU -Descending | Select-Object -First 10",
+      "Get-Process -Name chrome"
+    ],
+    "warning": null,
+    "tags": ["process", "cpu", "memory", "pid", "powershell"]
+  },
+  {
+    "name": "Stop-Process",
+    "category": "Processes",
+    "description": "Stops one or more running processes.",
+    "syntax": "Stop-Process [-Id] <Int32[]> [-Force]",
+    "examples": [
+      "Stop-Process -Name notepad -Force",
+      "Stop-Process -Id 1234"
+    ],
+    "warning": "Forcefully terminating processes may result in unsaved application data loss.",
+    "tags": ["process", "kill", "terminate", "powershell"]
+  },
+  {
+    "name": "Get-WinEvent",
+    "category": "Event Logs",
+    "description": "Gets events from event logs and event tracing log files on local and remote computers.",
+    "syntax": "Get-WinEvent [[-ListLog] <String[]>] [-LogName <String[]>] [-MaxEvents <Int64>] [-FilterHashtable <Hashtable>]",
+    "examples": [
+      "Get-WinEvent -LogName System -MaxEvents 50",
+      "Get-WinEvent -FilterHashtable @{LogName='System'; Level=2} -MaxEvents 20"
+    ],
+    "warning": null,
+    "tags": ["logs", "events", "troubleshooting", "system", "powershell"]
+  },
+  {
+    "name": "Get-ChildItem",
+    "category": "Files",
+    "description": "Gets the items and child items in one or more specified locations (dir / ls equivalent).",
+    "syntax": "Get-ChildItem [[-Path] <String[]>] [-Filter <String>] [-Recurse] [-Hidden]",
+    "examples": [
+      "Get-ChildItem -Path C:\\ -Filter *.log -Recurse -ErrorAction SilentlyContinue",
+      "Get-ChildItem | Sort-Object Length -Descending | Select-Object -First 10"
+    ],
+    "warning": null,
+    "tags": ["files", "directory", "search", "list", "powershell"]
+  },
+  {
+    "name": "Get-LocalUser",
+    "category": "Users",
+    "description": "Gets local user accounts on the system.",
+    "syntax": "Get-LocalUser [[-Name] <String[]>]",
+    "examples": [
+      "Get-LocalUser",
+      "Get-LocalUser -Name Administrator"
+    ],
+    "warning": null,
+    "tags": ["users", "accounts", "admin", "security", "powershell"]
+  }
+]
